@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Measure: Unlocking the Stars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars-bg"></div>
+    <div class="twinkling-bg"></div>
+
+    <nav>
+        <div class="logo">COSMIC<span class="highlight">MEASURE</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#distance">Distance</a></li>
+            <li><a href="#size">Size</a></li>
+            <li><a href="#simulations">Simulations</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Unlocking the <span class="glow-text">Universe</span></h1>
+            <p class="subtitle">How do we measure the infinite? Discover the secrets of stellar distance and size.</p>
+            <a href="#distance" class="cta-button">Start Exploring</a>
+        </div>
+    </section>
+
+    <section id="distance" class="content-section">
+        <div class="container">
+            <h2>Measuring <span class="highlight">Distance</span></h2>
+            <div class="card-grid">
+                <div class="card text-card">
+                    <h3>Stellar Parallax</h3>
+                    <p>Imagine holding your finger out and closing one eye, then the other. Your finger seems to jump back and forth against the background. This is <strong>parallax</strong>.</p>
+                    <p>Astronomers use this same trick! As Earth orbits the Sun, we look at a nearby star from different positions. The star appears to shift slightly against the background of more distant stars. By measuring this angle, we can calculate the exact distance.</p>
+                </div>
+                <div class="card visual-card">
+                    <div class="parallax-diagram">
+                        <!-- CSS/SVG Diagram will go here -->
+                        <div class="sun-diagram"></div>
+                        <div class="earth-orbit-diagram">
+                            <div class="earth-diagram"></div>
+                        </div>
+                        <div class="star-target"></div>
+                        <div class="background-stars"></div>
+                    </div>
+                    <p class="caption">Earth's position changes by 186 million miles every 6 months!</p>
+                </div>
+            </div>
+            
+            <div class="card full-width mt-4">
+                <h3>Standard Candles</h3>
+                <p>For stars too far away for parallax, we use "Standard Candles" like <strong>Cepheid Variables</strong>. These are special stars that pulse with brightness. The speed of their pulse tells us exactly how bright they truly are. By comparing their true brightness to how bright they look from Earth, we can figure out how far away they are—like judging the distance of a car by its headlights.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulations" class="simulation-section">
+        <div class="container">
+            <h2>Interactive <span class="highlight">Labs</span></h2>
+            
+            <!-- Parallax Sim -->
+            <div class="sim-container">
+                <h3>Lab 1: Stellar Parallax</h3>
+                <p class="sim-instruction">Drag Earth along its orbit to see the perspective shift.</p>
+                <div class="sim-interface" id="parallax-sim">
+                    <div class="sim-view-space">
+                        <canvas id="parallaxCanvas"></canvas>
+                    </div>
+                    <div class="sim-controls">
+                        <div class="data-display">
+                            <span class="label">Parallax Angle:</span>
+                            <span class="value" id="parallax-angle">0.00"</span>
+                        </div>
+                        <div class="data-display">
+                            <span class="label">Estimated Distance:</span>
+                            <span class="value" id="est-distance">-- ly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Size Sim -->
+            <div class="sim-container mt-5">
+                <h3>Lab 2: Star Size Calculator</h3>
+                <p class="sim-instruction">Adjust Luminosity and Temperature to see how they affect a star's size.</p>
+                <div class="sim-interface" id="size-sim">
+                    <div class="star-preview">
+                        <div id="star-visual" class="star-circle"></div>
+                    </div>
+                    <div class="sim-controls">
+                        <div class="control-group">
+                            <label>Luminosity (Brightness)</label>
+                            <input type="range" id="lum-slider" min="0.1" max="100" step="0.1" value="1">
+                            <span id="lum-val">1x Sun</span>
+                        </div>
+                        <div class="control-group">
+                            <label>Temperature (Color)</label>
+                            <input type="range" id="temp-slider" min="3000" max="30000" step="100" value="5800">
+                            <span id="temp-val">5800 K</span>
+                        </div>
+                        <div class="data-display highlight-box">
+                            <span class="label">Calculated Radius:</span>
+                            <span class="value" id="calc-radius">1.00 x Sun</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="size" class="content-section">
+        <div class="container">
+            <h2>Measuring <span class="highlight">Size</span></h2>
+            <div class="card-grid">
+                <div class="card text-card">
+                    <h3>The Stefan-Boltzmann Law</h3>
+                    <p>We can't usually measure a star's size directly because they are too far away and just look like dots. Instead, we use physics!</p>
+                    <p>If we know a star's <strong>Temperature</strong> (from its color) and its <strong>Luminosity</strong> (total energy output), we can calculate its surface area. From there, we get the radius.</p>
+                    <ul class="fact-list">
+                        <li><span class="icon">🔥</span> Hotter stars emit more energy per square meter.</li>
+                        <li><span class="icon">💡</span> If a star is cool but very bright, it MUST be <strong>huge</strong> (Red Giant).</li>
+                        <li><span class="icon">⚪</span> If a star is hot but dim, it MUST be <strong>tiny</strong> (White Dwarf).</li>
+                    </ul>
+                </div>
+                <div class="card visual-card center-content">
+                    <div class="size-comparison">
+                        <div class="star-comp dwarf"><span>Dwarf</span></div>
+                        <div class="star-comp sun"><span>Sun</span></div>
+                        <div class="star-comp giant"><span>Giant</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed for Future Astronomers &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
